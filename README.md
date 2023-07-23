@@ -13,6 +13,6 @@ cd automated_testing_exercises
 npm install
 
 # launch the cypress test runner
-npm run cy:open
+npx cypress open
 ```
 
