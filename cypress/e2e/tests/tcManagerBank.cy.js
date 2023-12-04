@@ -59,5 +59,13 @@ describe('Test Customer Bank XYZ', () => {
         cy.xpath(manager.getBtnCustomer).click();
         cy.xpath(manager.getSeacrhCustomer).should("be.enabled").type(dataCustomer.addCustomer.postCode);
       })
+
+      // it("TC3 - Search info customer by PostCode and delele info of customer", () => {
+      //   cy.visit(manager.getUrl);
+      //   cy.xpath(manager.getBtnCustomer).click();
+      //   cy.xpath(manager.getSeacrhCustomer).should("be.enabled").type(dataCustomer.addCustomer.postCode);
+      //   cy.xpath(manager.getTableCustomer);
+
+      // })
        
 })
