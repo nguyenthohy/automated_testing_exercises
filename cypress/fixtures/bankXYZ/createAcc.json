@@ -1,0 +1,10 @@
+{
+    "addCustomer": {
+        "firstName" : "Sang",
+        "lastName" : "Tran",
+        "postCode" : "1412",
+        "fullName" : "Sang Tran"
+    }
+
+        
+}
