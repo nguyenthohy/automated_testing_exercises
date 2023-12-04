@@ -15,7 +15,8 @@ const RUPEE = "Rupee";
 
 const BTN_CUSTOMER = "//button[normalize-space()='Customers']";
 const SEARCH_BOX_CUSTOMER = "//input[@placeholder='Search Customer']";
-const TABLE_CUSTOMER = "div//table[class = 'table table-bordered table-striped']";
+const TABLE_CUSTOMER = "//div//table[class = 'table table-bordered table-striped']";
+const ROW = '//table//tr[class ng-scope"';
 
 export default class Manager {
     get getUrl() {
@@ -76,6 +77,10 @@ export default class Manager {
 
     get getTableCustomer() {
         return TABLE_CUSTOMER;
+    }
+
+    get getRowTable() {
+        return ROW;
     }
 
 }

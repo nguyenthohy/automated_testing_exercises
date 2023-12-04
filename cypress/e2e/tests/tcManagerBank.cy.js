@@ -31,41 +31,54 @@ describe('Test Customer Bank XYZ', () => {
         cy.get(manager.getLastName).should("be.enabled").and("have.value", "");
         cy.get(manager.getPostCode).should("be.enabled").and("have.value", "");
 
+        cy.visit(manager.getUrl);
+
     })
          
-      it("TC1 - Open account number : Dollar, Rupee, Pound is success", () => {
-        cy.visit(manager.getUrl);
+      it("TC1 - Open account number : Dollar is success", () => {
+        
         cy.xpath(manager.getBtnOpenAcc).should("be.enabled").click();
         cy.get(manager.getListCustomer).select(dataCustomer.addCustomer.fullName);
         cy.get(manager.getListCurrency).select(manager.getDollarCurrency);
         cy.get(manager.getBtnSubmit).should("be.enabled").click();
-                  
-        cy.visit(manager.getUrl);
+      })
+
+      it("TC2 - Open account number :Rupee is success", () => {
+        //cy.visit(manager.getUrl);
         cy.xpath(manager.getBtnOpenAcc).should("be.enabled").click();
         cy.get(manager.getListCustomer).select(dataCustomer.addCustomer.fullName);
         cy.get(manager.getListCurrency).select(manager.getRupeeCurrency);
         cy.get(manager.getBtnSubmit).should("be.enabled").click();
-  
-        cy.visit(manager.getUrl);
+
+      }) 
+      
+      it("TC3 - Open account number : Pound is success", () => {
+        //cy.visit(manager.getUrl);
         cy.xpath(manager.getBtnOpenAcc).should("be.enabled").click();
         cy.get(manager.getListCustomer).select(dataCustomer.addCustomer.fullName);
         cy.get(manager.getListCurrency).select(manager.getPoundCurrency);
         cy.get(manager.getBtnSubmit).should("be.enabled").click();
+
       })
 
-
-      it("TC2 - Seacrh info customer by PostCode", () => {
+      it("TC4 - Seacrh info customer by PostCode", () => {
         cy.visit(manager.getUrl);
         cy.xpath(manager.getBtnCustomer).click();
         cy.xpath(manager.getSeacrhCustomer).should("be.enabled").type(dataCustomer.addCustomer.postCode);
       })
 
-      // it("TC3 - Search info customer by PostCode and delele info of customer", () => {
+      // it("TC5 - Search info customer by PostCode and delele info of customer", () => {
       //   cy.visit(manager.getUrl);
       //   cy.xpath(manager.getBtnCustomer).click();
       //   cy.xpath(manager.getSeacrhCustomer).should("be.enabled").type(dataCustomer.addCustomer.postCode);
-      //   cy.xpath(manager.getTableCustomer);
+      //   cy.get(".table.table-bordered.table-striped").should("exist");
+      //   cy.get(manager.getRowTable).should("exist");
 
       // })
-       
+        
+         
 })
+
+
+      
+       
